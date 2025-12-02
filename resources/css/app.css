@@ -1,0 +1,246 @@
+/* 自定义样式 */
+body {
+    font-family: 'Microsoft YaHei', Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* 宠物卡片样式 */
+.pet-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    overflow: hidden;
+}
+
+.pet-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.pet-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.pet-card:hover .pet-image {
+    transform: scale(1.05);
+}
+
+/* 导航栏样式 */
+.navbar {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff !important;
+}
+
+/* 页脚样式 */
+.footer {
+    background-color: #f8f9fa;
+    padding: 2rem 0;
+    margin-top: 3rem;
+    border-top: 1px solid #dee2e6;
+}
+
+/* Hero横幅区域 - 背景图片 */
+.hero-banner {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+}
+
+/* Hero遮罩层 - 确保文字清晰可读 */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #0a58ca3b 0%, rgb(75 129 162 / 25%) 100%);
+    z-index: 1;
+}
+
+/* Hero内容区域 - 确保在遮罩层之上 */
+.hero-banner .container {
+    z-index: 2;
+}
+
+/* Hero图标动画 */
+.hero-icon {
+    transition: transform 0.3s ease, filter 0.3s ease;
+    animation: float 3s ease-in-out infinite;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    padding: 8px;
+    backdrop-filter: blur(5px);
+}
+
+.hero-icon:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.hero-icon:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+.hero-icon:nth-child(3) {
+    animation-delay: 1.2s;
+}
+
+.hero-icon:nth-child(4) {
+    animation-delay: 1.8s;
+}
+
+.hero-icon:nth-child(5) {
+    animation-delay: 2.4s;
+}
+
+.hero-icon:hover {
+    transform: scale(1.2) translateY(-5px);
+    filter: drop-shadow(0 4px 12px rgba(255, 255, 255, 0.8));
+    background: rgba(255, 255, 255, 0.2);
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* 统计卡片样式 */
+.card {
+    border-radius: 10px;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+/* 搜索表单样式 */
+.form-control:focus,
+.form-select:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+/* 按钮增强 */
+.btn {
+    border-radius: 8px;
+    padding: 0.5rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+/* 徽章样式 */
+.badge {
+    border-radius: 6px;
+    padding: 0.4rem 0.8rem;
+    font-weight: 500;
+}
+
+/* ========== 宠物分页样式（完全独立） ========== */
+.pet-pagination-wrapper {
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.pet-pagination-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 8px;
+}
+
+.pet-page-item {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+.pet-page-link {
+    display: inline-block;
+    min-width: 40px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 12px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: #667eea;
+    text-decoration: none;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.pet-page-link:hover {
+    background-color: #667eea;
+    color: #ffffff;
+    border-color: #667eea;
+    text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.pet-page-active .pet-page-link {
+    background-color: #667eea;
+    color: #ffffff;
+    border-color: #667eea;
+    cursor: default;
+}
+
+.pet-page-active .pet-page-link:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.pet-page-disabled .pet-page-link {
+    color: #999999;
+    background-color: #f8f9fa;
+    border-color: #dee2e6;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.pet-page-disabled .pet-page-link:hover {
+    background-color: #f8f9fa;
+    color: #999999;
+    transform: none;
+    box-shadow: none;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .display-4 {
+        font-size: 2rem;
+    }
+    
+    .lead {
+        font-size: 1rem;
+    }
+}
